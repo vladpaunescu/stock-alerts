@@ -1,4 +1,4 @@
-<?php 
+<?php
 $DB_CONNECTION = mysql_connect('localhost','root',''); 
 if (!$DB_CONNECTION) { 
 	die('Could not connect to MySQL: ' . mysql_error()); 
