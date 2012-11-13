@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+    <head>
+        <title>Your Company</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+		<script src="jquery.js"></script>
+		<script src="help.js"></script>
+    </head>
+    
+    <body>
+        <div class="page-out">
+            <div class="page-in">
+                <div class="page">
+                    <div class="main">
+                        <div class="header">
+                            <div class="header-top">
+                                 <h1>Company <span>Name</span></h1>
+
+                            </div>
+                            <div class="header-bottom">
+                                 <h2>Lorem Ipsum is simply dummy text<br>
+                                of the typesetting industry.</h2>
+
+                            </div>
+                            <div class="topmenu">
+                                <ul>
+                                    <li style="background: transparent none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; padding-left: 0px;"><a href="index.html"><span>Home</span></a>
+
+                                    </li>
+                                    <li><a href="#"><span>About&nbsp;us</span></a>
+
+                                    </li>
+                                    <li><a href="#"><span>What's&nbsp;new</span></a>
+
+                                    </li>
+                                    <li><a href="#"><span>Services</span></a>
+
+                                    </li>
+                                    <li><a href="#"><span>Contact</span></a>
+
+                                    </li>
+                                    <li><a href="#"><span>Resources</span></a>
+
+                                    </li>
+                                    <li ><a href="#" onClick="logout();">span id="topMeniu7">Links</span></a>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="content-left">
+                                <div class="mainmenu">
+                                     <h2 class="sidebar1">Register</h2>
+									 <br/><br/>
+									 <div style="font-size: 20px;"><strong>Join us:</strong></div>
+									 <br/>
+									 
+									 <table style="border-spacing: 10px;">
+										<tr>
+											<td>
+												User name:	
+											</td>
+											<td>
+											 <input type="text" id="username" value="JohnC" style="color:#999;" 
+												 onfocus="if(this.value==this.defaultValue){this.value='';}this.style.color='#000';" 
+												 onblur="if(this.value==''){this.value=this.defaultValue;this.style.color='#999';}">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Password:
+											</td>
+											<td>
+											 <input id="pass" type="password" value="******" style="color:#999;" 
+												 onfocus="if(this.value==this.defaultValue){this.value='';}this.style.color='#000';" 
+												 onblur="if(this.value==''){this.value=this.defaultValue;this.style.color='#999';}">
+											</td>
+										</tr>	
+										<tr>
+											<td>
+												Confirm Password:
+											</td>
+											<td>
+											<input id="pass2" type="password" value="*******" style="color:#999;" 
+												 onfocus="if(this.value==this.defaultValue){this.value='';}this.style.color='#000';" 
+												 onblur="if(this.value==''){this.value=this.defaultValue;this.style.color='#999';}">
+											</td>
+										</tr>
+									<tr></tr>
+									<tr></tr>
+									<tr></tr>
+									<tr></tr>
+										<tr>
+											<td>
+												First name:	
+											</td>
+											<td>
+											 <input type="text" id="fname" value="John" style="color:#999;" 
+												 onfocus="if(this.value==this.defaultValue){this.value='';}this.style.color='#000';" 
+												 onblur="if(this.value==''){this.value=this.defaultValue;this.style.color='#999';}">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Last name:
+											</td>
+											<td>
+											 <input type="text" id="lname" value="Carter" style="color:#999;" 
+												 onfocus="if(this.value==this.defaultValue){this.value='';}this.style.color='#000';" 
+												 onblur="if(this.value==''){this.value=this.defaultValue;this.style.color='#999';}">
+											</td>
+										</tr>	
+										<tr>
+											<td>
+												Age:
+											</td>
+											<td>
+											<input type="text" id="age" value="25" style="color:#999;" 
+												 onfocus="if(this.value==this.defaultValue){this.value='';}this.style.color='#000';" 
+												 onblur="if(this.value==''){this.value=this.defaultValue;this.style.color='#999';}">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Sex:
+											</td>
+											<td>
+											<input type="text" id="sex" value="m" style="color:#999;" 
+												 onfocus="if(this.value==this.defaultValue){this.value='';}this.style.color='#000';" 
+												 onblur="if(this.value==''){this.value=this.defaultValue;this.style.color='#999';}">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Job:
+											</td>
+											<td>
+											<input type="text" id="job" value="Bank employee" style="color:#999;" 
+												 onfocus="if(this.value==this.defaultValue){this.value='';}this.style.color='#000';" 
+												 onblur="if(this.value==''){this.value=this.defaultValue;this.style.color='#999';}">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Email:
+											</td>
+											<td>
+											<input type="text" id="email" value="John@carter.com" style="color:#999;" 
+												 onfocus="if(this.value==this.defaultValue){this.value='';}this.style.color='#000';" 
+												 onblur="if(this.value==''){this.value=this.defaultValue;this.style.color='#999';}">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Tel:
+											</td>
+											<td>
+											<input type="text" id="tel" value="07*******" style="color:#999;" 
+												 onfocus="if(this.value==this.defaultValue){this.value='';}this.style.color='#000';" 
+												 onblur="if(this.value==''){this.value=this.defaultValue;this.style.color='#999';}">
+											</td>
+										</tr>
+										<tr></tr>
+										<tr></tr>
+										<tr>
+											<td>
+												<input id="Yes" type="checkbox" name="news">
+											</td>
+											<td>
+											Yes! I'd like to receive your periodic<br/> e-newsletter and information about <br/>new features, products and member benefits.
+											</td>
+										</tr>
+										<tr>
+										<td></td>
+										<td>
+										<a href="#register" onclick="register();" class="more">Register</a>
+										</td>
+										</tr>
+										
+									</table>
+									<div id="success" style="display: none; font-size: 20px;">
+									
+									</div>
+                                </div>
+                                
+                            </div>
+                         
+
+
+
+						 <div class="content-right">
+                                <div class="row1">
+                                     <h1 class="title">Welcome To <span>Our Site</span></h1>
+
+                                    <p><strong>Open account </strong> and you will get:.</p>
+                                    
+                                    <ul class="list1">
+                                        <li>stock evolution in time</li>
+                                        <li>an admin interface for your account</li>
+                                        <li>the chance to will with the the best brokers in the world</li>
+                                        <li>tutorials to learn how to invest your money</li>
+                                        
+                                    </ul>
+                                 <br/><br/><br/>  <br/><br/><br/> <br/><br/><br/>
+                                </div>
+								
+								
+                                <div class="row2">
+                                     <h2 class="subtitle">About <span>Us</span></h2>
+
+                                    <p><strong>Lorem Ipsum is simply dummy text</strong> of the printing and typesetting
+                                        industry. Lorem Ipsum has been the aaaa industry's standard dummy text
+                                        ever since the 1500s, ass as dwhen an unknasdown printer took a galley
+                                        of type and scrambled it to make a type speascimen book.
+                                        <br>It has survived not only five centuries, but also the leap into electronic
+                                        typesetting.and scrambled it to make a type speascimen book.</p>
+                                    <p>&nbsp;</p>
+                                    <p><strong>Lorem Ipsum is simply dummy text</strong> of the printing and typesetting
+                                        industry. Lorem Ipsum has been the industry's standard dummy text ever
+                                        since the 1500s, when an unknown printer took a galley of type and scrambled
+                                        it to make a type specimen book.</p>
+                                    <p>&nbsp;</p>
+                                    <p align="right"><a href="#" class="more">Read More</a>
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="sections">
+                                <div class="section1">
+                                     <h3>Lorem ipsum dolor sit</h3>
+
+                                    <p>&nbsp;</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur
+                                        augue eu neque. Mauris augue. Quisque dui.</p>
+                                    <p>&nbsp;</p>
+                                    <p><a href="#" class="moreSection">read more</a>
+
+                                    </p>
+                                </div>
+                                <div class="section2">
+                                     <h3>Lorem ipsum dolor sit</h3>
+
+                                    <p>&nbsp;</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur
+                                        augue eu neque. Mauris augue. Quisque dui.</p>
+                                    <p>&nbsp;</p>
+                                    <p><a href="#" class="moreSection">read more</a>
+
+                                    </p>
+                                </div>
+                                <div class="section3">
+                                     <h3>Lorem ipsum dolor sit</h3>
+
+                                    <p>&nbsp;</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur
+                                        augue eu neque. Mauris augue. Quisque dui.</p>
+                                    <p>&nbsp;</p>
+                                    <p><a href="#" class="moreSection">read more</a>
+
+                                    </p>
+                                </div>
+                                <div class="section4">
+                                     <h3>Lorem ipsum dolor sit</h3>
+
+                                    <p>&nbsp;</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur
+                                        augue eu neque. Mauris augue. Quisque dui.</p>
+                                    <p>&nbsp;</p>
+                                    <p><a href="#" class="moreSection">read more</a>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <p>&copy; Copyright 2010. Designed by <a target="_blank" href="http://www.htmltemplates.net">HTML Templates</a>
+
+                                <br>
+                            </p>
+                            <ul>
+                                <li style="border-left: medium none;"><a href="index.html"><span>Home</span></a>
+
+                                </li>
+                                <li><a href="#"><span>About&nbsp;us</span></a>
+
+                                </li>
+                                <li><a href="#"><span>What's&nbsp;new</span></a>
+
+                                </li>
+                                <li><a href="#"><span>Services</span></a>
+
+                                </li>
+                                <li><a href="#"><span>Contact</span></a>
+
+                                </li>
+                                <li><a href="#"><span>Resources</span></a>
+
+                                </li>
+                                <li style="padding-right: 0px;"><a href="#"><span>Links</span></a>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+<script>
+function getRequest() {
+    var req = false;
+    try{
+        // most browsers
+        req = new XMLHttpRequest();
+    } catch (e){
+        // IE
+        try{
+            req = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+            // try an older version
+            try{
+                req = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (e){
+                return false;
+            }
+        }
+    }
+    return req;
+}
+
+function register()
+{
+	if ( ($("#username")[0].value != 'JohnC' ? $("#username")[0].value : '' )  == '' ||
+			($("#pass")[0].value != '******' ? $("#pass")[0].value : '' ) == '' )
+		{
+			alert("Username and Password ar required.");
+			return;
+		}
+	if ( ($("#pass")[0].value != '******' ? $("#pass")[0].value : '' ) != 
+		($("#pass2")[0].value != '******' ? $("#pass2")[0].value : '' ))
+		{
+			alert("Password doesn't match.");
+			return;
+		}
+	if ( ! $("#Yes")[0].checked )
+	{
+			alert("Your need to accept your policy");
+			return;
+	}
+
+
+	var ajax = new XMLHttpRequest();
+	ajax.onreadystatechange = function()
+	{
+		if(ajax.readyState == 4 && ajax.status==200)
+		{
+			$('table').fadeOut("slow");
+			$("#success").html("<br/><br/><br/><br/><br/><br/> Welcome: <strong style=\"color: red;\">" 
+								+ ajax.responseText
+								+ "</strong><br/> You can now login to the system."
+								+ "<br/><br/> Thank you.");
+			$("#success").fadeIn("slow");
+		}
+		
+	}
+	
+	ajax.open("POST", "register.php", true);
+	ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	ajax.send("user="  + ($("#username")[0].value != 'JohnC' ? $("#username")[0].value : '' ) + 
+				"&pass=" + ($("#pass")[0].value != '******' ? $("#pass")[0].value : '' ) + 
+				"&fname=" + ($("#fname")[0].value != 'John' ? $("#fname")[0].value : '' ) + 
+				"&lname=" + ($("#lname")[0].value != 'Carter' ? $("#lname")[0].value : '' ) + 
+				"&age=" + ($("#age")[0].value != '25' ? $("#age")[0].value : '' ) + 
+				"&sex=" + ($("#sex")[0].value != 'm' ? $("#sex")[0].value : '' ) + 
+				"&job=" + ($("#job")[0].value != 'Bank employee' ? $("#job")[0].value : '' ) + 
+				"&email=" + ($("#email")[0].value != 'John@carter.com' ? $("#email")[0].value : '' ) + 
+				"&tel=" + ($("#tel")[0].value != '07*******' ? $("#tel")[0].value : '') );
+
+
+}
+</script>
+</html>
+
