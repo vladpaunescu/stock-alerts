@@ -1,0 +1,3 @@
+C:\wamp\www>mklink /D ioc "D:\Facultate\Anul 4\IOC\Proiect\stock-alerts\www"
+
+symbolic link created for ioc <<===>> D:\Facultate\Anul 4\IOC\Proiect\stock-alerts\www
