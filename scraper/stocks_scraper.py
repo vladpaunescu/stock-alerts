@@ -7,7 +7,6 @@ from sys import argv
 host="http://bvb.ro"
 
 
-
 def scrape_stocks_by_index(index):
 	url = host + "/TradingAndStatistics/IndexTransactions.aspx?index=" + index
 	page=urllib2.urlopen(url)
@@ -27,6 +26,7 @@ def scrape_stock(stock_symbol):
 if __name__ == "__main__":
 	if len(argv) != 2:
 		print "usage " + argv[0] + " index"
+		exit(1)
 
 	index = argv[1]
 	print "Getting stocks list for index " + index

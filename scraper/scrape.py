@@ -8,4 +8,4 @@ page=urllib2.urlopen(url)
 soup = BeautifulSoup(page.read())
 stocks=soup.findAll("span", {"id": "ctl00_central_lbPrice"})
 for stock in stocks:
-	print stock.text
+	print stock.text + " ",
