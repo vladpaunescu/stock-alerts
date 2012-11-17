@@ -21,7 +21,7 @@ def scrape_stock(stock_symbol):
 	stocks=soup.findAll("span", {"id": "ctl00_central_lbPrice"})
 	if stocks is not None:
 		return stocks[0].text
-	reutrn -1	
+	return -1
 	
 if __name__ == "__main__":
 	if len(argv) != 2:
