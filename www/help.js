@@ -35,18 +35,75 @@ function logout()
 	window.location.href = "index.html";
 }
 
+function getTopWatchList()
+{
+	$(".sections").show();
+	var ajax = new XMLHttpRequest();
+	ajax.onreadystatechange = function()
+	{
+		if(ajax.readyState == 4 && ajax.status==200)
+		{
+			if (ajax.responseText.indexOf('OK') != -1 )
+				{
+					var i=0;
+					var index;
+					var resp = ajax.responseText.split(",");
+					var len=resp.length;
+				
+					
+					for ( i=0 ; i<4; i++)
+					{ 
+						index = i+1;
+						if (len > 2 && 2*i < len-1)
+						{
+							$(".section" + index + " h3").html(resp[2*i]);
+							$("#sect"+index).html(resp[2*i+1]);
+							var a = $("#rm"+index);							
+							a.html("read more");
+							a.attr("href","stocks.html?id="+resp[2*i]);
+						}
+						else 
+						{
+							$(".section" + index + " h3").html("no more stocks in your watchlist");
+							$("#sect"+index).html("");
+							$("#rm"+index).hide();
+						}
+					}
+				
+					
+					
+				}
+			else
+				{
+					$("#error").show();
+				}
+		}
+		
+	}
+	
+	ajax.open("POST", "sections.php", true);
+	ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	ajax.send("id=" + getCookie('userID') );
+
+}
+
 $(document).ready(function() {
+
 	if (checkCookie('userID') == '')
 	{
-		if ( document.URL.indexOf("index.html") == -1 &&
-			document.URL.indexOf("register.html") == -1) 
+		$(".sections").hide();
+	
+		if ( document.URL.indexOf("index.html") == -1 && 
+			 document.URL.indexOf("register.html") == -1) 
 		{
 			window.location.href = "index.html";
 			return;
 		}
 		
 		return;
-	}	
+	}		
+	
+	getTopWatchList();
 	
 	$("#topMeniu7").html('Logout');
 });

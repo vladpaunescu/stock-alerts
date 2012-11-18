@@ -46,7 +46,7 @@
                                     <li><a href="#"><span>Resources</span></a>
 
                                     </li>
-                                    <li ><a href="#" onClick="logout();">span id="topMeniu7">Links</span></a>
+                                    <li ><a href="register.html" onClick="logout();"><span id="topMeniu7">Register</span></a>
 
                                     </li>
                                 </ul>
@@ -232,46 +232,46 @@
                             </div>
                             <div class="sections">
                                 <div class="section1">
-                                     <h3>Lorem ipsum dolor sit</h3>
+                                    
+<h3></h3>
 
                                     <p>&nbsp;</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur
-                                        augue eu neque. Mauris augue. Quisque dui.</p>
+                                    <p id="sect1"></p>
                                     <p>&nbsp;</p>
-                                    <p><a href="#" class="moreSection">read more</a>
+                                    <p><a id="rm1" href="#" class="moreSection"></a>
 
                                     </p>
                                 </div>
                                 <div class="section2">
-                                     <h3>Lorem ipsum dolor sit</h3>
+                                    
+<h3></h3>
 
                                     <p>&nbsp;</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur
-                                        augue eu neque. Mauris augue. Quisque dui.</p>
+                                    <p id="sect2"></p>
                                     <p>&nbsp;</p>
-                                    <p><a href="#" class="moreSection">read more</a>
+                                    <p><a id="rm2" href="#" class="moreSection"></a>
 
                                     </p>
                                 </div>
                                 <div class="section3">
-                                     <h3>Lorem ipsum dolor sit</h3>
+                                    
+<h3></h3>
 
                                     <p>&nbsp;</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur
-                                        augue eu neque. Mauris augue. Quisque dui.</p>
+                                    <p id="sect3"></p>
                                     <p>&nbsp;</p>
-                                    <p><a href="#" class="moreSection">read more</a>
+                                    <p><a id="rm3" href="#" class="moreSection"></a>
 
                                     </p>
                                 </div>
                                 <div class="section4">
-                                     <h3>Lorem ipsum dolor sit</h3>
+                                    
+<h3></h3>
 
                                     <p>&nbsp;</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur
-                                        augue eu neque. Mauris augue. Quisque dui.</p>
+                                    <p id="sect4"></p>
                                     <p>&nbsp;</p>
-                                    <p><a href="#" class="moreSection">read more</a>
+                                    <p><a id="rm4" href="#" class="moreSection"></a>
 
                                     </p>
                                 </div>
@@ -359,12 +359,29 @@ function register()
 	{
 		if(ajax.readyState == 4 && ajax.status==200)
 		{
-			$('table').fadeOut("slow");
-			$("#success").html("<br/><br/><br/><br/><br/><br/> Welcome: <strong style=\"color: red;\">" 
-								+ ajax.responseText
-								+ "</strong><br/> You can now login to the system."
-								+ "<br/><br/> Thank you.");
-			$("#success").fadeIn("slow");
+		    if ( ajax.responseText == "Error" )
+				
+				{
+					$('table').fadeOut("slow");
+					$("#success").html("<br/><br/><br/><br/><br/><br/> There was an : <strong style=\"color: red;\">" 
+									+ ajax.responseText
+									+ "</strong><br/>Retry."
+									+ "<br/><br/> Thank you.");
+					$("#success").fadeIn("slow");
+				}
+				else
+				{
+				$('table').fadeOut("slow");
+				$("#success").html("<br/><br/><br/><br/><br/><br/> Welcome: <strong style=\"color: red;\">" 
+									+ ajax.responseText
+									+ "</strong><br/> You can now login to the system."
+									+ "<br/><br/> Thank you.");
+				$("#success").fadeIn("slow");
+				}
+		}
+		else
+		{
+			$("#success").html("Error!");
 		}
 		
 	}
@@ -373,13 +390,13 @@ function register()
 	ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	ajax.send("user="  + ($("#username")[0].value != 'JohnC' ? $("#username")[0].value : '' ) + 
 				"&pass=" + ($("#pass")[0].value != '******' ? $("#pass")[0].value : '' ) + 
-				"&fname=" + ($("#fname")[0].value != 'John' ? $("#fname")[0].value : '' ) + 
-				"&lname=" + ($("#lname")[0].value != 'Carter' ? $("#lname")[0].value : '' ) + 
-				"&age=" + ($("#age")[0].value != '25' ? $("#age")[0].value : '' ) + 
+				"&firstName=" + ($("#fname")[0].value != 'John' ? $("#fname")[0].value : '' ) + 
+				"&lastName=" + ($("#lname")[0].value != 'Carter' ? $("#lname")[0].value : '' ) + 
+				"&birthday=" + ($("#age")[0].value != '25' ? $("#age")[0].value : '' ) + 
 				"&sex=" + ($("#sex")[0].value != 'm' ? $("#sex")[0].value : '' ) + 
 				"&job=" + ($("#job")[0].value != 'Bank employee' ? $("#job")[0].value : '' ) + 
 				"&email=" + ($("#email")[0].value != 'John@carter.com' ? $("#email")[0].value : '' ) + 
-				"&tel=" + ($("#tel")[0].value != '07*******' ? $("#tel")[0].value : '') );
+				"&phone=" + ($("#tel")[0].value != '07*******' ? $("#tel")[0].value : '') );
 
 
 }

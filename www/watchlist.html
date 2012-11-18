@@ -99,113 +99,158 @@ of the typesetting industry.</h2>
                                  	 
 									 <p style="font-size: 25px;">
 									 
-									 Edit your info.
+									 Edit your watchlist.
 									 
 									 </p>
 									 <br/><br/><br/>
 									 
-									 <table style="border-spacing: 10px;">
-										<tr>
-											<td>
-												User name:	
-											</td>
-											<td>
-											 <input data-id="1" type="text" id="username" style="color:#999;" >
-											</td>
-										</tr>
-										<tr>
-											<td>
-												Password:
-											</td>
-											<td>
-											 <input data-id="21" id="pass" type="password"  style="color:#999;">
-											</td>
-										</tr>	
-										<tr>
-											<td>
-												Confirm Password:
-											</td>
-											<td>
-											<input data-id="22" id="pass2" type="password"  style="color:#999;" >
-											</td>
-										</tr>
-									<tr></tr>
-									<tr></tr>
-									<tr></tr>
-									<tr></tr>
-										<tr>
-											<td>
-												First name:	
-											</td>
-											<td>
-											 <input data-id="4" type="text" id="fname"  style="color:#999;" >
-											</td>
-										</tr>
-										<tr>
-											<td>
-												Last name:
-											</td>
-											<td>
-											 <input data-id="5" type="text" id="lname" style="color:#999;" >
-											</td>
-										</tr>	
-										<tr>
-											<td>
-												Age:
-											</td>
-											<td>
-											<input data-id="6" type="text" id="age"  style="color:#999;" >
-											</td>
-										</tr>
-										<tr>
-											<td>
-												Sex:
-											</td>
-											<td>
-											<input data-id="7" type="text" id="sex"  style="color:#999;" >
-											</td>
-										</tr>
-										<tr>
-											<td>
-												Job:
-											</td>
-											<td>
-											<input data-id="8" type="text" id="job" style="color:#999;" >
-											</td>
-										</tr>
-										<tr>
-											<td>
-												Email:
-											</td>
-											<td>
-											<input data-id="3" type="text" id="email" style="color:#999;" >
-											</td>
-										</tr>
-										<tr>
-											<td>
-												Tel:
-											</td>
-											<td>
-											<input data-id="9" type="text" id="tel"  style="color:#999;" >
-											</td>
-										</tr>
-										<tr></tr>
-										<tr></tr>
+									<table id="watchlist" border="1" style="background-color:white;border:1px dotted black;width:50%;border-collapse:collapse;">
+									<tr style="background-color:green;color:white;">
+									<th style="padding:3px;">Stock</th><th style="padding:3px;">Action</th>
+									</tr>
+
+									</table>			
+
+									<script>
+
+										function deleteWatchlistItem(id)
+										{
+											var ajax = new XMLHttpRequest();
+											ajax.onreadystatechange = function()
+											{
+												if(ajax.readyState == 4 && ajax.status==200)
+												{
+													$("tr[id='"+ id +"']").fadeOut("slow");
+												}
+												else
+												{
+												
+												}
+												
+											}
+											ajax.open("POST", "deleteWatchlistItem.php", true);
+											ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+											ajax.send("user_id=" + getCookie('userID') + "&stock_id=" + id );
 										
-										<tr>
-										<td></td>
-										<td>
-											<p id="success" style="color: green;font-size: 20px; display: none;">Success</p>
-											<p id="error" style="color: red;font-size: 20px; display: none;">Error</p>
-										</td>
-										</tr>
+										}
+									
+										function insertWatchlist() 
+										{
+											var elSel = $('#watchlist');
+											var ajax = new XMLHttpRequest();
+											ajax.onreadystatechange = function()
+											{
+												if(ajax.readyState == 4 && ajax.status==200)
+												{
+													var resp = ajax.responseText.split(",");
+													var len=resp.length;
+													for (var i=0 ; i<len-1; i= i +2)
+													{ 
+														elSel.append('<tr id="'+resp[i]+'"><td style="padding:3px;">'+resp[i+1]+'</td><td style="padding:3px;">'+
+														'<a href="#delete" onClick="deleteWatchlistItem('+ resp[i] +')"><img src="images/del.jpg"/></a>'+'</td></tr>');
+													}
+												}
+												else
+												{
+												
+												}
+												
+											}
+											
+											ajax.open("POST", "getWatchlist.php", true);
+											ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+											ajax.send("id=" + getCookie('userID') );
+										}
 										
-										<tr>
-										<td></td>
-										<td>
-										<a href="#save" onclick="saveUserInfo();" class="more">Save</a>
-										</td>
-										</tr>
+										insertWatchlist();
+														
+									function addStockToWatchlist()
+									{
+										var id = $("#stocksForWatchlist").find(":selected").attr('value');
+										
+										var ajax = new XMLHttpRequest();
+										ajax.onreadystatechange = function()
+										{
+											if(ajax.readyState == 4 && ajax.status==200)
+											{
+												console.debug("ADDED!");
+											}
+											else
+											{
+											
+											}
+											
+										}
+										
+										ajax.open("POST", "addStockToWatchlist.php", true);
+										ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+										ajax.send("user_id=" + getCookie('userID') + "&stock_id=" + id);
+											
+									}
+														
+									</script>
+
+
+									<br/><br/><br/>
+									<p style="font-size: 18px;">
+									 
+									 Add a stock to your watchlist
+									 
+									 </p>
+									 <br/><br/>	
+									 
+									<table>
+									<tr>
+									<td><select id="stocksForWatchlist"></select></td>	
+									<td><a href="#add" onClick="addStockToWatchlist();"><img src="images/add.png" style="width:20px; height:20px;"></a></td>
+									</tr>
+									</table>
+										
+
+									<script>
+									
+										function appendOptionLast(val, text)
+											{
+											  var elOptNew = document.createElement('option');
+											  elOptNew.text = text;
+											  elOptNew.value =  val;
+											  var elSel = document.getElementById('stocksForWatchlist');
+
+											  try {
+												elSel.add(elOptNew, null); // standards compliant; doesn't work in IE
+											  }
+											  catch(ex) {
+												elSel.add(elOptNew); // IE only
+											  }
+											}
+
+										appendOptionLast("", "Please select a stock ");
+										var ajax = new XMLHttpRequest();
+										ajax.onreadystatechange = function()
+										{
+											if(ajax.readyState == 4 && ajax.status==200)
+											{
+												var resp = ajax.responseText.split(",");
+												var len=resp.length;
+												for (var i=0 ; i<len-1; i= i +2)
+												{ 
+													appendOptionLast(resp[i] , resp[i+1]);
+												}
+											}
+											else
+											{
+											
+											}
+											
+										}
+										
+										ajax.open("POST", "stocksForWatchlist.php", true);
+										ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+										ajax.send("id=" + getCookie('userID') );
+																			
+									</script>
+									 
+									 
 										
 									</table>
 							

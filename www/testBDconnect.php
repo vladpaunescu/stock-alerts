@@ -1,5 +1,8 @@
 <?php
-$DB_CONNECTION = mysql_connect('localhost','root',''); 
+
+require_once('config.php');
+
+$DB_CONNECTION = mysql_connect($DB_HOST, $DB_USERNAME, $DB_PASSWORD);
 if (!$DB_CONNECTION) { 
 	die('Could not connect to MySQL: ' . mysql_error()); 
 } 

@@ -1,5 +1,8 @@
-<?php 
-$DB_CONNECTION = mysql_connect('localhost','root',''); 
+<?php
+require_once('config.php');
+
+$DB_CONNECTION = mysql_connect($DB_HOST, $DB_USERNAME, $DB_PASSWORD);
+
 if (!$DB_CONNECTION) { 
 	die(`Could not connect to MySQL: ` . mysql_error()); 
 } 
@@ -13,11 +16,11 @@ $user = $_POST['user'];
 $pass = $_POST['pass'];
 
 
-mysql_select_db("bursa", $DB_CONNECTION) or die(mysql_error());
+mysql_select_db($DB_DEFAULT_DATABASE, $DB_CONNECTION) or die(mysql_error());
 
 
-mysql_query("update user set `username` = '$user', `password` = '$pass'
-		where `id` = $id;") or die(mysql_error());
+mysql_query("update users set `username` = '$user', `password` = '$pass'
+		where `user_id` = $id;") or die(mysql_error());
 mysql_close($DB_CONNECTION); 
 echo 'OK';
 ?> 
