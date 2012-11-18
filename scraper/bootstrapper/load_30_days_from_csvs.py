@@ -3,6 +3,7 @@ import csv
 
 from db.database import *
 import sqlalchemy
+import  config
 
 from stocks_scraper import *
 
@@ -48,7 +49,7 @@ def insert_into_db(stock, rows):
         print row
         query = sqlalchemy.insert(daily_quotes,  {"stock_id":stock_id, "date" : row["data"],  "value": row["pret inchidere"] })
         print query
-        results = storage.execute(query)
+        #results = storage.execute(query)
 
     storage.disconnect()
 
@@ -56,10 +57,10 @@ def insert_into_db(stock, rows):
 
 if __name__ == "__main__":
 
-    if len(argv) != 2:
-        print "usage " + argv[0] + " index"
-        exit(1)
-    index = argv[1]
+    index = config.INDEX
+    if len(argv) == 2:
+        index = argv[1]
+    print "Index: " + index
 
     print "Getting stocks csv_directoryist for index " + index
     stocks = scrape_stocks_by_index(index)
@@ -68,4 +69,4 @@ if __name__ == "__main__":
     for stock in stocks:
          "Parsing CSV for stock " + stock
          rows = parse_csv(stock)
-        # insert_into_db(stock, rows)
+         insert_into_db(stock, rows)

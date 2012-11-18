@@ -46,6 +46,7 @@ if __name__ == "__main__":
     if len(argv) == 2:
         index = argv[1]
     print "Index: " + index
+
     current_time = datetime.now()
     stock_values = get_stock_values(index)
 
