@@ -1,11 +1,8 @@
 #! bin/ env python
-import os
 import csv
-import sys
-from database import *
-import sqlalchemy
 
-sys.path.append("..")
+from db.database import *
+import sqlalchemy
 
 from stocks_scraper import *
 
@@ -37,22 +34,14 @@ def parse_csv(stock):
         rows.append(item)
     return rows
 
-def get_stock_id(stock):
-    storage = Storage()
-    storage.connect()
-    stocks = meta.tables['stocks']
-    query = sqlalchemy.select([stocks.c.stock_id]).where(stocks.c.symbol == stock)
-    results =storage.execute(query)
-    for result in results:
-        print result["stock_id"]
-        return result["stock_id"]
-
 
 def insert_into_db(stock, rows):
 
-    stock_id = get_stock_id(stock)
     storage = Storage()
     storage.connect()
+
+    stock_id = get_stock_id(storage, stock)
+
     # stock_id date value
     daily_quotes = meta.tables['daily_quotes']
     for row in rows:
@@ -60,6 +49,8 @@ def insert_into_db(stock, rows):
         query = sqlalchemy.insert(daily_quotes,  {"stock_id":stock_id, "date" : row["data"],  "value": row["pret inchidere"] })
         print query
         results = storage.execute(query)
+
+    storage.disconnect()
 
 
 
@@ -76,5 +67,5 @@ if __name__ == "__main__":
 
     for stock in stocks:
          "Parsing CSV for stock " + stock
-         rows = parse_csv(stock,)
-         insert_into_db(stock, rows)
+         rows = parse_csv(stock)
+        # insert_into_db(stock, rows)

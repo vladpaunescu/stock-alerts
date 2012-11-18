@@ -1,9 +1,9 @@
 from __future__ import division
 import sqlalchemy
-import simplejson as json
 import  config
 
-connection_string = 'mysql://%s:%s@%s/%s?charset=utf8&use_unicode=0' % (config.USER, config.PASSWORD, config.HOST, config.DB)
+connection_string = 'mysql://%s:%s@%s/%s?charset=utf8&use_unicode=0' % (
+config.USER, config.PASSWORD, config.HOST, config.DB)
 engine = sqlalchemy.create_engine(connection_string, pool_recycle=3600, pool_size=5, max_overflow=10)
 meta = sqlalchemy.MetaData()
 meta.reflect(bind=engine)
@@ -454,7 +454,17 @@ class Storage(object):
 #        #give up
 #    print "Unknown app: %s" % str(app)
 #    return None
-#
+#get_stock_id
+
+def get_stock_id(storage, stock):
+    stocks = meta.tables['stocks']
+    query = sqlalchemy.select([stocks.c.stock_id]).where(stocks.c.symbol == stock)
+    results =storage.execute(query)
+    for result in results:
+        print result["stock_id"]
+        return result["stock_id"]
+
+
 if __name__ == "__main__":
 
 
@@ -471,4 +481,6 @@ if __name__ == "__main__":
     results =storage.execute(query)
     for result in results:
         print result["symbol"]
+        get_stock_id(storage, result["symbol"])
+    storage.disconnect()
 

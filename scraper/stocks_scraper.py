@@ -4,6 +4,7 @@ from BeautifulSoup import BeautifulSoup
 import urllib2
 from sys import argv
 
+
 host="http://bvb.ro"
 
 
@@ -22,7 +23,7 @@ def scrape_stock(stock_symbol):
 	if stocks is not None:
 		return stocks[0].text
 	return -1
-	
+
 if __name__ == "__main__":
 	if len(argv) != 2:
 		print "usage " + argv[0] + " index"
@@ -33,7 +34,7 @@ if __name__ == "__main__":
 	stocks = scrape_stocks_by_index(index)
 	print "Stocks: " + str(stocks)
 	
-	stock_values = {}	
+	stock_values = {}
 	for stock in stocks:
 		value = scrape_stock(stock)
 		print stock + ": " + value
