@@ -1,6 +1,9 @@
 # idea files
 .idea/
 
+#log files
+logs/
+
 #vim backup files
 
 *~
