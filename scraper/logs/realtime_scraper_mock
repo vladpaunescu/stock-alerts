@@ -16,79 +16,79 @@ ELMA: 0,1850
 SELECT realtime_quotes.value 
 FROM realtime_quotes 
 WHERE realtime_quotes.stock_id = :stock_id_1 ORDER BY realtime_quotes.date_added DESC
-Last FP value: 0.1808
+Last FP value: 0.1435
 1
-New val 0.175202608536
+New val 0.139078317304
 INSERT INTO realtime_quotes (stock_id, date_added, value) VALUES (:stock_id, :date_added, :value)
 8
 SELECT realtime_quotes.value 
 FROM realtime_quotes 
 WHERE realtime_quotes.stock_id = :stock_id_1 ORDER BY realtime_quotes.date_added DESC
-Last BIO value: 0.1101
+Last BIO value: 0.0818
 8
-New val 0.100497442477
+New val 0.080881864173
 INSERT INTO realtime_quotes (stock_id, date_added, value) VALUES (:stock_id, :date_added, :value)
 4
 SELECT realtime_quotes.value 
 FROM realtime_quotes 
 WHERE realtime_quotes.stock_id = :stock_id_1 ORDER BY realtime_quotes.date_added DESC
-Last TEL value: 5.1689
+Last TEL value: 3.7909
 4
-New val 5.09296424662
+New val 3.53229766112
 INSERT INTO realtime_quotes (stock_id, date_added, value) VALUES (:stock_id, :date_added, :value)
 2
 SELECT realtime_quotes.value 
 FROM realtime_quotes 
 WHERE realtime_quotes.stock_id = :stock_id_1 ORDER BY realtime_quotes.date_added DESC
-Last TLV value: 0.3653
+Last TLV value: 0.2578
 2
-New val 0.338662632083
+New val 0.235976025078
 INSERT INTO realtime_quotes (stock_id, date_added, value) VALUES (:stock_id, :date_added, :value)
 10
 SELECT realtime_quotes.value 
 FROM realtime_quotes 
 WHERE realtime_quotes.stock_id = :stock_id_1 ORDER BY realtime_quotes.date_added DESC
-Last ELMA value: 0.0772
+Last ELMA value: 0.0554
 10
-New val 0.07419060347
+New val 0.0504387042213
 INSERT INTO realtime_quotes (stock_id, date_added, value) VALUES (:stock_id, :date_added, :value)
 5
 SELECT realtime_quotes.value 
 FROM realtime_quotes 
 WHERE realtime_quotes.stock_id = :stock_id_1 ORDER BY realtime_quotes.date_added DESC
-Last BVB value: 7.4962
+Last BVB value: 5.4150
 5
-New val 6.86748042735
+New val 4.92406861826
 INSERT INTO realtime_quotes (stock_id, date_added, value) VALUES (:stock_id, :date_added, :value)
 7
 SELECT realtime_quotes.value 
 FROM realtime_quotes 
 WHERE realtime_quotes.stock_id = :stock_id_1 ORDER BY realtime_quotes.date_added DESC
-Last BRK value: 0.0455
+Last BRK value: 0.0308
 7
-New val 0.0416004569784
+New val 0.0297810668989
 INSERT INTO realtime_quotes (stock_id, date_added, value) VALUES (:stock_id, :date_added, :value)
 3
 SELECT realtime_quotes.value 
 FROM realtime_quotes 
 WHERE realtime_quotes.stock_id = :stock_id_1 ORDER BY realtime_quotes.date_added DESC
-Last SNP value: 0.1543
+Last SNP value: 0.1123
 3
-New val 0.149042139419
+New val 0.109313279093
 INSERT INTO realtime_quotes (stock_id, date_added, value) VALUES (:stock_id, :date_added, :value)
 6
 SELECT realtime_quotes.value 
 FROM realtime_quotes 
 WHERE realtime_quotes.stock_id = :stock_id_1 ORDER BY realtime_quotes.date_added DESC
-Last BRD value: 2.6570
+Last BRD value: 1.7873
 6
-New val 2.45674915326
+New val 1.73938775304
 INSERT INTO realtime_quotes (stock_id, date_added, value) VALUES (:stock_id, :date_added, :value)
 9
 SELECT realtime_quotes.value 
 FROM realtime_quotes 
 WHERE realtime_quotes.stock_id = :stock_id_1 ORDER BY realtime_quotes.date_added DESC
-Last TGN value: 80.3139
+Last TGN value: 61.9803
 9
-New val 75.0235211277
+New val 58.1962833647
 INSERT INTO realtime_quotes (stock_id, date_added, value) VALUES (:stock_id, :date_added, :value)
