@@ -1,9 +1,5 @@
-<?php
-
-require_once('config.php');
-
-$DB_CONNECTION = mysql_connect($DB_HOST, $DB_USERNAME, $DB_PASSWORD);
-
+<?php 
+$DB_CONNECTION = mysql_connect('localhost','root',''); 
 if (!$DB_CONNECTION) { 
 	die(`Could not connect to MySQL: ` . mysql_error()); 
 } 
@@ -17,6 +13,7 @@ if ( !(array_key_exists('user', $_POST) && array_key_exists('pass', $_POST)
 	&& array_key_exists('sex', $_POST) 
 	&& array_key_exists('job', $_POST) 
 	&& array_key_exists('phone', $_POST) 
+	&& array_key_exists('email', $_POST) 
 	) )
 	{
 	 die('Error !');
@@ -29,13 +26,14 @@ $birthday = $_POST['birthday'];
 $pass = $_POST['pass'];
 $sex = $_POST['sex'];
 $job = $_POST['job'];
+$email = $_POST['email'];
 $phone = $_POST['phone'];
 
-mysql_select_db($DB_DEFAULT_DATABASE, $DB_CONNECTION) or die(mysql_error());
+mysql_select_db("bursa", $DB_CONNECTION) or die(mysql_error());
 
 
 mysql_query("INSERT INTO users (`username`, `password`,`email`,`first_name`, `last_name`, `birthday`, `sex`, `job`, `phone`) 
-		VALUES ('$user', '$pass', '$firstName', '$lastName' ,'$birthday' ,'$pass' ,'$sex', '$job', '$phone')")  or   die("Error") ;
+		VALUES ('$user', '$pass', '$email', '$firstName', '$lastName' ,'$birthday' ,'$sex', '$job', '$phone')")  or   die(mysql_error()) ;
 
 mysql_close($DB_CONNECTION); 
 

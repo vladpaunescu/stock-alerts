@@ -1,8 +1,5 @@
-<?php
-
-require_once('config.php');
-
-$DB_CONNECTION = mysql_connect($DB_HOST, $DB_USERNAME, $DB_PASSWORD);
+<?php 
+$DB_CONNECTION = mysql_connect('localhost','root',''); 
 if (!$DB_CONNECTION) { 
 	die(`Could not connect to MySQL: ` . mysql_error()); 
 } 
@@ -30,10 +27,10 @@ if ( !(array_key_exists('id', $_POST) ) )
 	$type = $_POST['type'];
 	$value = $_POST['change'];
 	
-mysql_select_db($DB_DEFAULT_DATABASE, $DB_CONNECTION) or die(mysql_error());
+mysql_select_db("bursa", $DB_CONNECTION) or die(mysql_error());
 
 $result = mysql_query("INSERT INTO `bursa`.`alerts` (`id`, `user_id`, `stock_id`, `date_added`, `value`, `type`, `target_value`, `date_completed`, `viewed`) 
-VALUES (NULL, '$user_id', '$stock_id', now(), (select value from daily_quotes where stock_id='$stock_id'), '$type', '$value', NULL, NULL);") or die(mysql_error());;
+VALUES (NULL, '$user_id', '$stock_id', now(), (select value from realtime_quotes where stock_id='$stock_id' order by `date_added` desc limit 1), '$type', '$value', NULL, NULL);") or die(mysql_error());;
 mysql_close($DB_CONNECTION); 
 echo 'OK';
 ?>

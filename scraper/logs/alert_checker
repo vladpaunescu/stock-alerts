@@ -1,0 +1,19 @@
+SELECT alerts.id, alerts.value, alerts.stock_id, alerts.type, alerts.target_value 
+FROM alerts 
+WHERE alerts.date_completed IS NULL
+(3L, Decimal('0.0817'), 7L, u'value', Decimal('10.0000'))
+SELECT realtime_quotes.value 
+FROM realtime_quotes 
+WHERE realtime_quotes.stock_id = :stock_id_1 ORDER BY realtime_quotes.date_added DESC
+(4L, Decimal('0.1358'), 10L, u'percent', Decimal('1.0000'))
+SELECT realtime_quotes.value 
+FROM realtime_quotes 
+WHERE realtime_quotes.stock_id = :stock_id_1 ORDER BY realtime_quotes.date_added DESC
+(5L, Decimal('4.9165'), 6L, u'value', Decimal('-10.0000'))
+SELECT realtime_quotes.value 
+FROM realtime_quotes 
+WHERE realtime_quotes.stock_id = :stock_id_1 ORDER BY realtime_quotes.date_added DESC
+(7L, Decimal('0.3689'), 1L, u'percent', Decimal('1.0000'))
+SELECT realtime_quotes.value 
+FROM realtime_quotes 
+WHERE realtime_quotes.stock_id = :stock_id_1 ORDER BY realtime_quotes.date_added DESC

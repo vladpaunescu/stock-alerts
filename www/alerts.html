@@ -34,169 +34,98 @@ text-align:center;
 of the typesetting industry.</h2>
 
                             </div>
-                            <div class="topmenu">
+                        <div class="topmenu">
                                 <ul>
                                     <li style="background: transparent none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; padding-left: 0px;"><a href="index.html"><span>Home</span></a>
 
                                     </li>
-                                    <li><a href="#"><span>About&nbsp;us</span></a>
+                                    <li><a href="aboutus.html"><span>About&nbsp;us</span></a>
 
                                     </li>
-                                    <li><a href="#"><span>What's&nbsp;new</span></a>
+                                    <li><a href="whatisnew.html"><span>What's&nbsp;new</span></a>
 
                                     </li>
-                                    <li><a href="#"><span>Services</span></a>
+                                    <li><a href="Services.html"><span>Services</span></a>
 
                                     </li>
-                                    <li><a href="#"><span>Contact</span></a>
+                                    <li><a href="Contact.html"><span>Contact</span></a>
 
                                     </li>
-                                    <li><a href="#"><span>Resources</span></a>
+                                    <li><a href="Resources.html"><span>Resources</span></a>
 
                                     </li>
-                                    <li><a href="register.html" onClick="logout();"><span id="topMeniu7">Register</span></a>
+                                    <li><a id="topMeniu7a" href="index.html#" onclick="logout();"><span id="topMeniu7">Logout</span></a>
 
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                          </div>
                         <div class="content">
                             <div class="content-left">
-                                <div class="mainmenu" id="login" style="display: none;"> 
-									<h2 class="sidebar1">Login</h2>
+                             
+							    <div class="mainmenu" id="meniu" style="display: none;">
+                                    	<h2 class="sidebar1">Main Menu</h2>
 
-                                    <br/>
-                                    <br/>
-                                    <div style="font-size: 20px;"><strong>Join us:</strong>
-                                    </div>
-                                    <br/>
-                                    <form id="login" onsubmit="return login(this);">
-                                        <table style="border-spacing: 10px;">
-                                            <tr>
-                                                <td>User name:</td>
-                                                <td>
-                                                    <input type="text" id="username"  style="color:#999;">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Password:</td>
-                                                <td>
-                                                    <input id="password" type="password" style="color:#999;">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>	
-													<a href="#Login" onclick="javascript:$('form').submit();" class="more">Login</a>
-                                                </td>
-                                            </tr>
-                                        </table>
-										<script>
-										function loginPHP(user, pass)
-										{
-											var ajax = new XMLHttpRequest();
-											ajax.onreadystatechange = function()
-											{
-												if(ajax.readyState == 4 && ajax.status==200)
-												{
-													var resp = ajax.responseText;
-													if (resp.length != 0) 
-														setCookie('userID', resp, 1);
-													else
-														{
-															setCookie('userID', '', -1);
-															return;
-														}
-													
-													$('div[id="login"]').fadeOut("slow");
-													$('div[id="meniu"]').fadeIn(5000);
-													$("#topMeniu7").html('Logout');
-													showNews();
-												}
-											}
-											ajax.open("POST", "login.php", true);
-											ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-											ajax.send("user=" +  user + "&pass=" + pass);
-											
-										}
+                                    <ul>
+                                        <li><a href="Your_Account.html">My Account</a>
+                                        </li>
+                                        <li><a href="Alerts.html">Alerts<span style="color: red;" id="pageAlerts"></span></a>
+                                        </li>
+                                        <li><a href="Stocks.html">Stocks</a>
+                                        </li>
+                                        <li><a href="Watchlist.html">Watchlist</a>
+                                        </li>
+                                        <li><a href="Tutorial.html">Tutorial</a>
+                                        </li>
+                                    </ul>
+                                    <div class="contact">
+                                        	<h2 class="sidebar2">Top News</h2>
+
+                                        <div class="streaming id-market-news-stream" id="market-news-stream">	<font size="2">
+									<div class="contact-detail">
+                                        <p class="green"><strong></strong>
+										<div class="cluster">
+										<div>
+										<a class="googleTitle" href="http://news.google.com/news/url?sa=T&amp;ct=us/0-1-6&amp;fd=S&amp;url=http://www.cnbc.com/id/49860596&amp;cid=43981933757286&amp;ei=bvunUJCPFcPFwAPy-wE&amp;usg=AFQjCNGrLlLxFhbJFaBv9VaxQG11rhTXTA" rel="nofollow" id="n-hp-">Market Outlook: Why Investors May Not Feel Very Thankful</a></div>
+				
+										<div class="snippet">Market Outlook: Why Investors May Not Feel Very Thankful. Published:...</div><br />
+										</div>
+										<div class="cluster">
+										<div>
+										<a class="googleTitle" href="http://news.google.com/news/url?sa=T&amp;ct=us/0-2-5&amp;fd=S&amp;url=http://www.marketwatch.com/story/2-missing-in-wake-of-gulf-of-mexico-oil-rig-fire-2012-11-17%3Flink%3DMW_latest_news&amp;cid=43981934190122&amp;ei=bvunUJCPFcPFwAPy-wE&amp;usg=AFQjCNGyU7xqOyvkEn4RCDAeFmrxFaOa_Q" rel="nofollow" id="n-hp-">2 missing in wake of Gulf of Mexico oil rig fire</a></div>
 										
+										<div class="snippet">WASHINGTON (MarketWatch) - Government officials continued Saturday to search ....</div><br />
+										</div>
+										<div class="cluster">
+										<div>
+										<a class="googleTitle" href="http://news.google.com/news/url?sa=T&amp;ct=us/0-3-6&amp;fd=S&amp;url=http://www.chicagotribune.com/business/ct-biz-1117-tribune-liguori-20121117,0,5736097.story&amp;cid=43981934178476&amp;ei=bvunUJCPFcPFwAPy-wE&amp;usg=AFQjCNHQhUbb8jxC76aevTJTcAHq_JH3Ug" rel="nofollow" id="n-hp-">TV executive Peter Liguori to be new CEO of Tribune Co., sources say</a></div>
+									
+										<div class="snippet">When Tribune Co. emerges from bankruptcy, the new owners plan to name ...</div><br />
+										</div>
+										<div class="cluster">
+										<div>
+										<a class="googleTitle" href="http://news.google.com/news/url?sa=T&amp;ct=us/0-4-6&amp;fd=S&amp;url=http://online.barrons.com/article/SB50001424052748704526104578115292558298904.html%3Fmod%3DBOL_twm_fs&amp;cid=43981933219832&amp;ei=bvunUJCPFcPFwAPy-wE&amp;usg=AFQjCNGfR9nwifNpOy9fzojHLSLys6JiGQ" rel="nofollow" id="n-hp-">Four Ways to Get Extra Yield Without Extra Risk</a></div>
 										
-										function login ( el )
-										{
-											if ( el.username.value == '' || el.password.value == '' ) 
-											{
-												alert ("Please provide an username and a password.");
-												return;
-											}
-											loginPHP(el.username.value, el.password.value);
-											return false;
-										}
-										</script>
-                                    </form>
-									<div class="contact">
-                                    
-									<h2 class="sidebar2">Contact</h2>
+										<div class="snippet">With Treasuries yielding next to nothing, investors are looking for new ways ...</div><br />
+										</div>
+										<div class="cluster">
+										<div>
+										<a class="googleTitle" href="http://news.google.com/news/url?sa=T&amp;ct=us/0-5-6&amp;fd=S&amp;url=http://www.businessweek.com/articles/2012-11-16/explaining-stuff-you-dont-get-about-the-bp-settlement&amp;cid=43981932984717&amp;ei=bvunUJCPFcPFwAPy-wE&amp;usg=AFQjCNHbCsJUxTzkLg9e3QWhcG_ugQ07CA" rel="nofollow" id="n-hp-">Why $4.5 Billion Doesn't Get BP off the Hook</a></div>
+										
+										<div class="snippet">BP (BP), as we know, has agreed to an historic settlement with the U.S....</div><br />
+										</div></div>
+                                    </font>
 
-                                    <div class="contact-detail">
-                                        <p class="green"><strong>Lorem Ipsum is simply dummy text</strong>
-
-                                        </p>
-                                        <p><strong>Adress :</strong> Lorem Ipsum has been the
-                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dummy
-                                            text the 1500s,</p>
-                                        <p><strong>E-mail :</strong> &nbsp;&nbsp;&nbsp;when an unknown printer took
-                                            a</p>
-                                        <p><strong>Phone :</strong> &nbsp;&nbsp;&nbsp;00-0000000000
-                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;000-0000-0000</p>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                                </div>
-                     
-								<div class="mainmenu" id="meniu" style="display: none;"> 
-									<h2 class="sidebar1">Main Menu</h2>
-									<ul>
-									  <li><a href="Your_Account.html">Your Account</a></li>
-									  <li><a href="#">this is a dummy link 2</a></li>
-									  <li><a href="#">this is a dummy link 3</a></li>
-									  <li><a href="#">this is a dummy link 4</a></li>
-									  <li><a href="#">this is a dummy link 5</a></li>
-									  <li><a href="#">this is a dummy link 6</a></li>
-									  <li><a href="#">this is a dummy link 7</a></li>
-									  <li><a href="#">this is a dummy link 8</a></li>
-									  <li><a href="#">this is a dummy link 9</a></li>
-									  <li><a href="#">this is a dummy link 10</a></li>
-									</ul>
-									<div class="contact">
-                                    
-									<h2 class="sidebar2">Top News</h2>
-
-                                    <div class="contact-detail">
-                                        <p class="green"><strong>Here are the latest news.</strong>                                        </p>
-                                        <p><strong>Adress :</strong> Lorem Ipsum has been the
-                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dummy
-                                            text the 1500s,
-										</p>
-                                        <p><strong>E-mail :</strong> &nbsp;&nbsp;&nbsp;when an unknown printer took
-                                            a</p>
-                                        <p><strong>Phone :</strong> &nbsp;&nbsp;&nbsp;00-0000000000
-                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;000-0000-0000</p>
-                                    </div>
-									<script>
-									function showNews()
-									{
-									
-									console.debug("TODO : showNews");
-									
-									}
-									</script>
-                                </div>
-								</div>				
-								
+                       	
                             </div>
                             <div class="content-right">
                                 <div class="row1">
                                     
-									<h1 class="title">Welcome To <span>Alerts</span></h1>
+									<h1 class="title">Welcome To Your <span>Alerts</span></h1>
 									
 									<table  border="1" style="background-color:white;border:1px dotted black;border-collapse:collapse;" id="alerts">
 										<tr style="background-color:green;color:white;">
@@ -215,14 +144,21 @@ of the typesetting industry.</h2>
 									<br />
 									<br />
 									<br />
+									
+									
+									<p style="font-size: 18px;">
+									 
+									 Add a new alert
+									 
+									</p>
 									<br />
 									<br />
 									
 									<table  border="1" style="background-color:white;border:1px dotted black;border-collapse:collapse;" id="alerts">
 										<tr style="background-color:green;color:white;">
 											<td style="padding:3px; width: 100px;">Name</td>
-											<td style="padding:3px; width: 100px;">Alert Type</td>
-											<td style="padding:3px;  width: 100px;">Change with</td>								
+											<td style="padding:3px; width: 116px;">Alert Type</td>
+											<td style="padding:3px;  width: 200px;">Change with <br />(positive or negative value)</td>								
 											<td style="padding:3px;  width: 20px;"></td>								
 										</tr>
 										<tr>
@@ -239,7 +175,7 @@ of the typesetting industry.</h2>
 										</select>										
 										</td>
 										<td><input type="text" id="change"></td>
-										<td><a href="#add" onClick="add();"><img src="images/add.png" style="width:20px; height:20px;"></a></td>
+										<td><a href="#add" onClick="add();"><img src="add.png" style="width:20px; height:20px;"></a></td>
 										</tr>
 										
 									</table>
@@ -348,8 +284,8 @@ of the typesetting industry.</h2>
 																   el[i+3]  + '</td><td>' + 
 																   el[i+4]  + '</td><td>' + 
 																   el[i+5]  + '</td><td>' + 
-																   el[i+7]  + '</td><td>' + 
-																  '<a href="#delete" onClick="deleteAlert('+ el[i+0] +')"><img src="images/del.jpg"/></a>' + '</td></tr>' ;
+																   el[i+6]  + '</td><td>' + 
+																  '<a href="#delete" onClick="deleteAlert('+ el[i+0] +')"><img src="del.jpg"/></a>' + '</td></tr>' ;
 																  
 											$("#alerts").append(row);
 											
@@ -359,12 +295,12 @@ of the typesetting industry.</h2>
 									
 									}
 
-										var ajax = new XMLHttpRequest();
-										ajax.onreadystatechange = function()
+										var ajax1 = new XMLHttpRequest();
+										ajax1.onreadystatechange = function()
 										{
-											if(ajax.readyState == 4 && ajax.status==200)
+											if(ajax1.readyState == 4 && ajax1.status==200)
 											{
-												showAlerts(ajax.responseText);
+												showAlerts(ajax1.responseText);
 											}
 											else
 											{
@@ -372,7 +308,28 @@ of the typesetting industry.</h2>
 											}
 											
 										}
-										ajax.open("POST", "alertGET.php", true);
+										ajax1.open("POST", "alertGET.php", true);
+										ajax1.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+										ajax1.send("id=" + getCookie('userID') );
+										
+										
+										
+										
+										
+										var ajax = new XMLHttpRequest();
+										ajax.onreadystatechange = function()
+										{
+											if(ajax.readyState == 4 && ajax.status==200)
+											{
+												
+											}
+											else
+											{
+											
+											}
+											
+										}
+										ajax.open("POST", "alertViewALL.php", true);
 										ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 										ajax.send("id=" + getCookie('userID') );
 										
@@ -382,10 +339,10 @@ of the typesetting industry.</h2>
 
                                  </div>
                                </div>
-                            <div class="sections">
+                                <div class="sections">
                                 <div class="section1">
                                     
-
+<h3></h3>
 
                                     <p>&nbsp;</p>
                                     <p id="sect1"></p>
@@ -396,7 +353,7 @@ of the typesetting industry.</h2>
                                 </div>
                                 <div class="section2">
                                     
-
+<h3></h3>
 
                                     <p>&nbsp;</p>
                                     <p id="sect2"></p>
@@ -407,7 +364,7 @@ of the typesetting industry.</h2>
                                 </div>
                                 <div class="section3">
                                     
-
+<h3></h3>
 
                                     <p>&nbsp;</p>
                                     <p id="sect3"></p>
@@ -418,7 +375,7 @@ of the typesetting industry.</h2>
                                 </div>
                                 <div class="section4">
                                     
-
+						<h3></h3>
 
                                     <p>&nbsp;</p>
                                     <p id="sect4"></p>
@@ -428,35 +385,9 @@ of the typesetting industry.</h2>
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                      </div>
                         <div class="footer">
-                            <p>&copy; Copyright 2010. Designed by <a target="_blank" href="http://www.htmltemplates.net">HTML Templates</a>
-
-                                <br>
-                            </p>
-                            <ul>
-                                <li style="border-left: medium none;"><a href="index.html"><span>Home</span></a>
-
-                                </li>
-                                <li><a href="#"><span>About&nbsp;us</span></a>
-
-                                </li>
-                                <li><a href="#"><span>What's&nbsp;new</span></a>
-
-                                </li>
-                                <li><a href="#"><span>Services</span></a>
-
-                                </li>
-                                <li><a href="#"><span>Contact</span></a>
-
-                                </li>
-                                <li><a href="#"><span>Resources</span></a>
-
-                                </li>
-                                <li style="padding-right: 0px;"><a href="#"><span>Links</span></a>
-
-                                </li>
-                            </ul>
+                            
                         </div>
                     </div>
                 </div>

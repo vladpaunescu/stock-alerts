@@ -1,6 +1,6 @@
 HOST = "localhost:3306"
 USER = "root"
-PASSWORD = "student"
+PASSWORD = ""
 DB = "bursa"
 
 # default index

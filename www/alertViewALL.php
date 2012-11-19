@@ -11,7 +11,8 @@ if ( !(array_key_exists('id', $_POST) ) )
 
 	$id = $_POST['id'];
 mysql_select_db("bursa", $DB_CONNECTION) or die(mysql_error());
-$result = mysql_query("delete from `alerts` where id = '$id';") or die(mysql_error());;
+$result = mysql_query("UPDATE `alerts` SET `viewed` = 1 where
+									(`viewed` = 0 or `viewed` is null ) and `date_completed` is not null and `user_id` = '$id'") or die(mysql_error());;
+
 mysql_close($DB_CONNECTION); 
-echo 'OK';
 ?>

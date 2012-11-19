@@ -1,6 +1,7 @@
 from __future__ import division
 import sqlalchemy
 import  config
+from realtime_scraper_mock import insert_realtime_quotes_into_db
 
 connection_string = 'mysql://%s:%s@%s/%s?charset=utf8&use_unicode=0' % (
 config.USER, config.PASSWORD, config.HOST, config.DB)
@@ -457,25 +458,32 @@ class Storage(object):
 #get_stock_id
 
 def get_stock_id(storage, stock):
+    storage.connect()
     stocks = meta.tables['stocks']
     query = sqlalchemy.select([stocks.c.stock_id]).where(stocks.c.symbol == stock)
     results =storage.execute(query)
+    storage.disconnect()
     for result in results:
         print result["stock_id"]
         return result["stock_id"]
 
+def get_last_stock_val(storage, stock_id):
+    storage.connect()
+    realtime_quotes = meta.tables['realtime_quotes']
+    query = sqlalchemy.select([realtime_quotes.c.value]).where(realtime_quotes.c.stock_id == stock_id).order_by(realtime_quotes.c.date_added.desc())
+    print query
+    results = storage.execute(query)
+    storage.disconnect()
+
+    for result in results:
+        return result["value"]
 
 if __name__ == "__main__":
 
 
-    #    users = meta.tables['omniture_app_users']
-    #    query = sqlalchemy.select([users.c.application, sqlalchemy.func.ifnull(sqlalchemy.func.sum(users.c.daily_value),0).label('total_first_launches')],
-    #        from_obj=users).where(sqlalchemy.and_(users.c.metric == "First Launch", users.c.date>=from_date, users.c.date<=to_date)).group_by(users.c.application)
-    #    return query
-
 
     storage = Storage()
-    storage.connect()
+
     stocks = meta.tables['stocks']
     query = sqlalchemy.select([stocks.c.stock_id, stocks.c.symbol, stocks.c.name])
     results =storage.execute(query)

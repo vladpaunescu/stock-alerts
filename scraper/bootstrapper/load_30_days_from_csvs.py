@@ -20,7 +20,6 @@ def parse_csv(stock):
     data_list = list(data)
     total_rows = len(data_list)
     print total_rows
-    first_row_to_read = total_rows - 30
 
     rows = []
 
@@ -36,9 +35,8 @@ def parse_csv(stock):
     return rows
 
 
-def insert_into_db(stock, rows):
+def insert_into_db(storage, stock, rows):
 
-    storage = Storage()
     storage.connect()
 
     stock_id = get_stock_id(storage, stock)
@@ -47,9 +45,9 @@ def insert_into_db(stock, rows):
     daily_quotes = meta.tables['daily_quotes']
     for row in rows:
         print row
-        query = sqlalchemy.insert(daily_quotes,  {"stock_id":stock_id, "date" : row["data"],  "value": row["pret inchidere"] })
+        query = sqlalchemy.insert(daily_quotes,  {"stock_id" : stock_id, "date" : row["data"],  "value": row["pret inchidere"] })
         print query
-        #results = storage.execute(query)
+        results = storage.execute(query)
 
     storage.disconnect()
 
@@ -65,8 +63,10 @@ if __name__ == "__main__":
     print "Getting stocks csv_directoryist for index " + index
     stocks = scrape_stocks_by_index(index)
     print "Stocks: " + str(stocks)
+    storage = Storage()
 
     for stock in stocks:
          "Parsing CSV for stock " + stock
          rows = parse_csv(stock)
-         insert_into_db(stock, rows)
+         insert_into_db(storage, stock, rows)
+

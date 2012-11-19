@@ -108,12 +108,10 @@ Invest in your future</h2>
                                                             return;
                                                         }
 $("#error").hide();
-getNumberOfAlets();
                                                         $('div[id="login"]').fadeOut("slow");
                                                         $('div[id="meniu"]').fadeIn(5000);
                                                         $("#topMeniu7").html('Logout');
-                                                      
-														getTopWatchList();
+                                                        showNews();
                                                     }
                                                 }
                                                 ajax.open("POST", "login.php", true);
@@ -151,9 +149,9 @@ getNumberOfAlets();
                                     	<h2 class="sidebar1">Main Menu</h2>
 
                                     <ul>
-                                        <li><a href="Your_Account.html">My Account</a>
+                                        <li><a href="Your_Account.html">Your Account</a>
                                         </li>
-                                        <li><a  href="Alerts.html">Alerts<span style="color: red;" id="pageAlerts"></span></a>
+                                        <li><a href="Alerts.html">Alerts</a>
                                         </li>
                                         <li><a href="Stocks.html">Stocks</a>
                                         </li>

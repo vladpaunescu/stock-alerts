@@ -49,7 +49,7 @@ function getTopWatchList()
 					var index;
 					var resp = ajax.responseText.split(",");
 					var len=resp.length;
-				
+					len = len - 1;
 					
 					for ( i=0 ; i<4; i++)
 					{ 
@@ -64,7 +64,8 @@ function getTopWatchList()
 						}
 						else 
 						{
-							$(".section" + index + " h3").html("no more stocks in your watchlist");
+							
+							$(".section" + index + " h3").html("<br/><br/>Please add more stocks in your watchlist.");
 							$("#sect"+index).html("");
 							$("#rm"+index).hide();
 						}
@@ -87,6 +88,31 @@ function getTopWatchList()
 
 }
 
+function getNumberOfAlets()
+{
+
+var ajax1 = new XMLHttpRequest();
+		ajax1.onreadystatechange = function()
+		{
+			if(ajax1.readyState == 4 && ajax1.status==200)
+			{
+				if (ajax1.responseText == 0 )
+				{
+					$("#pageAlerts").css('color','black');
+				}
+				$("#pageAlerts").html("&nbsp;(" +ajax1.responseText + ")" );
+			}
+			else
+			{
+			
+			}
+			
+		}
+		ajax1.open("POST", "alertNumber.php", true);
+		ajax1.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		ajax1.send("id=" + getCookie('userID') );
+}
+
 $(document).ready(function() {
 
 	if (checkCookie('userID') == '')
@@ -94,16 +120,26 @@ $(document).ready(function() {
 		$(".sections").hide();
 	
 		if ( document.URL.indexOf("index.html") == -1 && 
+			document.URL.indexOf("aboutus.html") == -1 && 
+			document.URL.indexOf("whatisnew.html") == -1 && 
+			document.URL.indexOf("Services.html") == -1 && 
+			document.URL.indexOf("Contact.html") == -1 && 
+			document.URL.indexOf("Resources.html") == -1 && 
 			 document.URL.indexOf("register.html") == -1) 
 		{
 			window.location.href = "index.html";
 			return;
 		}
-		
+			$("#topMeniu7a").attr('href','register.html');
+			$("#topMeniu7").html('Register');
 		return;
 	}		
+	//if ( document.URL.indexOf('alerts') == -1 )
+	//{
 	
-	getTopWatchList();
+	//	}
+		getNumberOfAlets();
+				getTopWatchList();
 	
-	$("#topMeniu7").html('Logout');
+
 });
