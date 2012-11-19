@@ -2,7 +2,7 @@
 .idea/
 
 # log files
-log/
+logs/
 
 #vim backup files
 
