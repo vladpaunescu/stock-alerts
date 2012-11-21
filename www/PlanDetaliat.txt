@@ -1,0 +1,28 @@
+Stock Stalker
+
+	1) Plan de implementare
+		- realizarea unei baze de date corespunzatoare
+		- realizarea unei aplicatii care sa colecteze si sa adauge data in baza de date
+		- realizarea unei aplicatii care gestioneaza baza de date
+		- realizarea unei intefete grafice corespunzatoare
+		
+	2)	Sarcini
+		- Baduna Mariana-Codruta
+			> prelucrarea datelor 
+			> introducerea datelor in UI
+			> testare a aplicatiei
+			
+		- Calinescu Alexandru
+			> stabilirea tehnologiilor utilizate
+			> introducerea datelor in UI
+			> testare a aplicatiei
+			
+		- Paunescu Vlad
+			> creare baza de date
+			> crearea aplicatiei de colectare a datelor (scrapping)
+			> gestionarea a informatiilor din baza de date
+			
+		- Ciorobea Mihai-Alexandru
+			> analiza a datelor
+			> introducerea datelor in UI
+			> testare a aplicatiei

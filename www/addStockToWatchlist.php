@@ -20,7 +20,7 @@ if (!$DB_CONNECTION) {
 mysql_select_db("bursa", $DB_CONNECTION) or die(mysql_error());
 
 $result = mysql_query("INSERT INTO `bursa`.`watchlist` ( `user_id`, `stock_id`, `date_added`, `value`) 
-VALUES ( '$user_id', '$stock_id', now(), (select `value` from daily_quotes where stock_id='$stock_id' order by date desc limit 1));") or die(mysql_error());
+VALUES ( '$user_id', '$stock_id', now(), (select `value` from realtime_quotes where stock_id='$stock_id' order by date_added desc limit 1));") or die(mysql_error());
 mysql_close($DB_CONNECTION); 
 
 ?>
