@@ -4,7 +4,6 @@ from datetime import datetime
 from db.database import  *
 
 
-
 host = config.BVB_HOST
 
 def get_stock_values(index):
@@ -20,7 +19,7 @@ def get_stock_values(index):
     print stock_values
     return  stock_values
 
-def insert_realtime_quotes_into_db(stock_values, current_time):
+def insert_daily_quotes_into_db(stock_values, current_time):
 
     storage = Storage()
 
@@ -34,8 +33,8 @@ def insert_stock_quote_into_db(storage, stock, value, current_time):
     stock_id = get_stock_id(storage, stock)
 
     storage.connect()
-    realtime_quotes = meta.tables['realtime_quotes']
-    query = sqlalchemy.insert(realtime_quotes,  {"stock_id":stock_id, "date_added" : current_time,  "value": value})
+    realtime_quotes = meta.tables['daily_quotes']
+    query = sqlalchemy.insert(realtime_quotes,  {"stock_id":stock_id, "date" : current_time,  "value": value})
     print query
     results = storage.execute(query)
     storage.disconnect()
@@ -51,5 +50,5 @@ if __name__ == "__main__":
     stock_values = get_stock_values(index)
 
     # insert into db
-    insert_realtime_quotes_into_db(stock_values, current_time)
+    insert_daily_quotes_into_db(stock_values, current_time)
 

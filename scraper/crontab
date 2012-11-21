@@ -22,9 +22,9 @@
 # m h  dom mon dow   command
 
 # every minute
-* * * * * python ~/ioc/scraper/realtime_scraper_mock.py > ~/ioc/scraper/logs/realtime_scraper_mock
+#* * * * * python ~/ioc/scraper/realtime_scraper_mock.py > ~/ioc/scraper/logs/realtime_scraper_mock
 #* * * * * python ~/ioc/scraper/realtime_scraper.py > ~/ioc/scraper/logs/realtime_scrper
-* * * * * python ~/ioc/scraper/alert_checker.py > ~/ioc/scraper/logs/alert_checker
+#* * * * * python ~/ioc/scraper/alert_checker.py > ~/ioc/scraper/logs/alert_checker
 
 
 # every 15 minutes
@@ -32,5 +32,8 @@
 #*/15 * * * * python ~/ioc/scraper/alert_checker.py > ~/ioc/scraper/logs/alert_checker
 
 # every 15 minutes between 10 AM and 5 PM
-#*/15 9-16 * * * python ~/ioc/scraper/realtime_scraper.py > ~/ioc/scraper/logs/realtime_scraper
-#*/15 9-16 * * * pyhton ~/ioc/scraper/alert_checker.py > ~/ioc/scraper/logs/alert_checker
+*/15 9-16 * * * python ~/ioc/scraper/realtime_scraper.py > ~/ioc/scraper/logs/realtime_scraper
+*/15 9-16 * * * pyhton ~/ioc/scraper/alert_checker.py > ~/ioc/scraper/logs/alert_checker
+
+# daily scraper run at 17:15 every day
+15 16 * * * python ~/ioc/scraper/dailye_scraper.py > ~/ioc/scraper/logs/daily_scraper
