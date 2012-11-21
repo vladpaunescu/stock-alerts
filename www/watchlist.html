@@ -157,12 +157,12 @@ Invest in your future</h2>
 										
 											if ( (newVal - oldVal) > 0 )
 											{
-												return (((newVal-oldVal)/oldVal) + "").substring(0,5) + '%  <img src="poz.gif"/>';
+												return (((newVal-oldVal)/oldVal * 100) + "").substring(0,5) + '%  <img src="poz.gif"/>';
 												
 											}
 											if ( (newVal - oldVal) < 0 )
 											{											
-											return (((newVal-oldVal)/oldVal) + "").substring(0,5) + '%  <img src="neg.gif"/>';
+											return (((newVal-oldVal)/oldVal * 100) + "").substring(0,5) + '%  <img src="neg.gif"/>';
 											}	
 											return '0%  <img src="neg.gif"/>';
 										}
